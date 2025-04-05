@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+
+</head>
+<body>
+
+    <nav id="nav-esquerda">
+        <div id="logo">
+            <img src="imagens/logo.png" alt="logo">
+        </div>
+    </nav>
+
+    <div class="container" id="container">
+        <h2 id="title">Login</h2>
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="password" placeholder="Senha" id="password" required>
+        <button id="actionButton">Entrar</button>
+        <p class="switch">Não tem uma conta? <span onclick="toggleForm()">Cadastre-se</span></p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const title = document.getElementById('title');
+            const button = document.getElementById('actionButton');
+            const switchText = document.querySelector('.switch span');
+
+            if (title.innerText === 'Login') {
+                title.innerText = 'Cadastro';
+                button.innerText = 'Cadastrar';
+                switchText.innerText = 'Faça login';
+            } else {
+                title.innerText = 'Login';
+                button.innerText = 'Entrar';
+                switchText.innerText = 'Cadastre-se';
+            }
+        }
+    </script>
+
+</body>
+</html>

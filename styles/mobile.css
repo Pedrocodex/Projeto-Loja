@@ -1,0 +1,227 @@
+/*---Elementos do HEADER---*/
+
+@media (max-width: 1920px) { 
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapaA.jpeg'); /* Adiciona um gradiente sobre a imagem de fundo */
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Redimensiona a imagem para cobrir todo o cabeçalho */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapaB.jpeg'); /* Adiciona um gradiente sobre a imagem de fundo */
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Redimensiona a imagem para cobrir todo o cabeçalho */
+    }
+}
+
+@media screen and (max-width: 300px) {
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapaC.jpeg'); /* Adiciona um gradiente sobre a imagem de fundo */
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Redimensiona a imagem para cobrir todo o cabeçalho */
+    }
+}
+
+/*--- NAVEBAR ---*/
+
+@media screen and (max-width: 1110px) {
+    header nav#nav-esquerda ul.menu-principal li a {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    header nav#nav-esquerda div#logo {
+        margin-left: 1rem;
+    }
+}
+
+/* MENU HAMBURGUER */
+
+header nav#nav-esquerda {
+    justify-content: space-between; /* Ajusta a distribuição dos itens no espaço entre eles */
+}
+
+header nav#nav-esquerda ul#icone-menu {
+    display: flex; /* Exibe o menu hamburguer */
+}
+
+header nav#nav-esquerda ul#icone-menu li#menuX {
+    display: none; /* Esconde o ícone de fechar (X) */
+}
+
+/* MENU */
+
+header nav#nav-esquerda ul.menu-principal {
+    flex-direction: column; /* Alinha os itens do menu em coluna */
+    width: 70%; /* Define a largura do menu como 80% */
+    height: 70vh; /* Define a altura do menu como 70% da altura da viewport */
+    
+    background: rgba(35, 23, 38, 0.486);
+    border: 20px solid;
+    border-image: linear-gradient(#5f193d, #00a6fe, #a5246f);
+    padding-top: .5rem; /* Define um padding no topo do menu */
+    position: absolute; /* Define a posição como absoluta */
+    top: 7rem; /* Posiciona o menu 7rem do topo */
+    right: 0; /* Posiciona o menu alinhado à direita */
+    z-index: 999; /* Define a ordem de empilhamento */
+    display: flex; /* Esconde o menu por padrão */
+    overflow: visible; /* Teste esta alteração */
+  
+/* Bordas com degradê ao redor completo */
+
+    border: 5px solid transparent; /* Define bordas inicialmente transparentes */
+    border-image-source: linear-gradient(
+        45deg,
+        #4304f1,
+        #008cff,
+        #8024a5,
+        #00a6fe
+    ); /* Degradê ao redor */
+    border-image-slice: 1; /* Faz o gradiente preencher toda a borda */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Adiciona sombra */
+}
+
+header nav#nav-esquerda ul.menu-principal li {
+    margin: .5rem;
+}
+
+header nav#nav-esquerda ul.menu-principal li a {
+    font-size: 120%;
+}
+
+
+
+
+
+/* Responsividade para dispositivos menores */
+@media screen and (max-width: 800px) {
+    .produtos-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        gap: 20px; /* Espaçamento menor */
+    }
+
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), 
+        url('../imagens/headercapaB.jpeg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .produtos-container {
+        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas */
+        gap: 10px; /* Reduz ainda mais o espaçamento */
+        padding: 10px; /* Ajusta o padding geral */
+    }
+
+    .produto {
+        max-width: 120%; /* Ajusta largura no mobile */
+        padding: 8px; /* Diminui o espaçamento interno */
+        border-width: 2px; /* Reduz a espessura da borda */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Uma sombra mais leve */
+    }
+
+    .produto img {
+        width: 80%; /* Ajusta as imagens para serem menores */
+        margin: 0 auto; /* Centraliza as imagens */
+    }
+
+    .produto h3 {
+        font-size: 0.9rem; /* Reduz o tamanho do título */
+    }
+
+    .produto .preco {
+        font-size: 0.9rem; /* Diminui o tamanho do preço */
+    }
+
+    .produto button {
+        font-size: 0.8rem; /* Ajusta o tamanho do texto do botão */
+        padding: 6px 8px; /* Reduz o tamanho do botão */
+    }
+
+    header {
+        background: linear-gradient(
+            rgba(23, 31, 38, 0.3),
+            rgba(23, 31, 38, 0.2)
+        ), url('../imagens/headercapaC.jpeg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+
+
+/* Estilos responsivos para a página de login */
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Reduzindo o tamanho do container */
+        padding: 30px;
+        top: -10px; /* Mantendo a posição mais acima */
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%; /* Deixa o container mais ajustado para telas pequenas */
+        padding: 25px;
+        top: 0;
+    }
+
+    nav#nav-esquerda div#logo {
+        width: 70px;  /* Reduz o tamanho do logo */
+        height: 100px;
+        margin-left: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .switch {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav#nav-esquerda div#logo {
+        width: 100px;  /* Reduz o tamanho do logo */
+        height: auto;  /* Mantém a proporção */
+        margin-left: 10px; /* Ajusta o espaçamento */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav#nav-esquerda div#logo {
+        width: 50px;  
+        height: auto; 
+        margin-left: 5px; 
+    }
+}
+
+

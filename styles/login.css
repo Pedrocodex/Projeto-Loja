@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapa.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Ajuste do logo */
+nav#nav-esquerda {
+    display: flex;
+    height: 150px;
+    width: 100%;
+
+}
+
+nav#nav-esquerda div#logo {
+    width: 100px;  /* Ajustei o tamanho */
+    height: 120px;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-top: -192px;
+}
+
+nav#nav-esquerda div#logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Estilo do container de login */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    width: 520px;
+    position: relative; top: -30px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #4304f1,#008cff, #8024a5, #00a6fe) 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    box-shadow: 0 0 10px #8e44ad;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #4304f1,#008cff, #8024a5, #00a6fe) 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+}
+
+.switch {
+    margin-top: 15px;
+    color: #aaa;
+    font-size: 16px;
+}
+
+.switch span {
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.switch span:hover {
+    color: #ff69b4;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

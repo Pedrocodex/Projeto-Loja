@@ -1,0 +1,415 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Jost', sans-serif;
+    height: 100vh;
+    
+}
+
+h3 {
+    font-family: 'Jost', sans-serif;
+    text-shadow: 4px 4px 6px #000;
+    font-weight: 700;
+    font-size: max(44px, 5.2vw);
+}
+
+p {
+    font-family: 'Red Hat Text', sans-serif;
+    text-shadow: 4px 4px 6px #464646;
+    font-weight: lighter;
+    font-size: max(20px, 2.8vw);
+    line-height: 1.8;
+    color: #eee;
+}
+
+/* HEADER */
+header {
+    max-width: 100%;
+    height: 100vh; /* 100% da imagem no header */
+    background: url('../imagens/headercapa.jpg') center/cover no-repeat;
+    position: relative;
+    background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapa.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito de Degradê no Header */
+header:after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Início do degradê no final do header */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura do degradê */
+    background: linear-gradient(
+        #171f2607, /* Cor inicial transparente */
+        #0e0a0e /* Cor final opaca (ou do fundo do main) */
+    );
+    z-index: 1;
+}
+
+/* Navbar */
+header nav#nav-esquerda {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+
+header nav#nav-esquerda div#logo {
+    width: 100px;
+    height: 120px;
+    margin-left: 150px;
+    cursor: pointer;
+}
+
+header nav#nav-esquerda div#logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Ícones do Menu (Hambúrguer e Fechar) */
+header nav#nav-esquerda ul#icone-menu {
+    display: flex;
+}
+
+header nav#nav-esquerda ul#icone-menu li {
+    list-style: none;
+}
+
+header nav#nav-esquerda ul#icone-menu li ion-icon {
+    font-size: 40px;
+    color: #EBEFF2;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+header nav#nav-esquerda ul#icone-menu li#menuX {
+    display: none;
+}
+
+/* Menu Principal */
+
+header nav#nav-esquerda ul.menu-principal {
+    flex-direction: column;
+    width: 20%; /* Tamanho fixo desde o início */
+    max-width: 350px; /* Garantir um limite máximo, se necessário */
+    opacity: 0;
+    display: none;
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    background: rgba(35, 23, 38, 0.486);
+    border: 5px solid transparent;
+    border-image-source: linear-gradient(45deg, #4304f1, #008cff, #8024a5, #00a6fe);
+    border-image-slice: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transform: translateX(100%); /* Fora da tela inicialmente */
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease; /* Suavidade garantida */
+}
+
+header nav#nav-esquerda ul.menu-principal.active {
+    opacity: 1;
+    display: flex;
+    transform: translateX(0); /* Menu entra na tela */
+}
+
+
+
+
+header nav#nav-esquerda ul.menu-principal li {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+header nav#nav-esquerda ul.menu-principal li a {
+    text-decoration: none;
+    color: #EBEFF2;
+    font-size: 90%;
+    text-shadow: 3px 4px 5px #000;
+    padding-bottom: 8px;
+    transition: 0.2s ease-in-out;
+}
+
+header nav#nav-esquerda ul.menu-principal li a:hover {
+    opacity: .8;
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Estilos da Chamada */
+header div.chamada {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    margin-top: 45px;
+}
+
+header div.chamada h3 {
+    font-size: 60px;
+    color: #b61b6e;
+    text-shadow: 4px 4px 6px #000;
+    margin-left: 10px;
+    margin-top: -90px;
+    text-align: left;
+}
+
+header div.chamada p {
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 30px;
+    color: rgb(185, 35, 120);
+    text-shadow: 4px 4px 6px #000;
+    margin-top: 15px;
+    margin-left: 20px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+div.chamada a {
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: max(14px, 1.5vw);
+    color: #EBEFF2;
+    text-decoration: none;
+    padding: 18px 55px;
+    border-radius: 8px;
+    font-weight: 600;
+    background: transparent;
+    border: 3px solid;
+    border-image: linear-gradient(hsl(201, 100%, 50%), rgb(0, 140, 255), rgb(67, 4, 241)) 1;
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.chamada a:hover {
+    color: #FFFFFF;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 140, 255, 0.5);
+}
+
+/* Responsividade */
+@media screen and (max-width: 800px) {
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapaB.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    header {
+        background: linear-gradient(rgba(23, 31, 38, 0.3), rgba(23, 31, 38, 0.2)), url('../imagens/headercapaC.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 5rem; /* Destaque maior para o título */
+    color: #b61b6e;
+    font-size: 50px;
+    text-shadow: 4px 4px 6px #000;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes respiracao {
+    0%, 100% {
+        transform: scale(1); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.05); /* Levemente maior */
+    }
+}
+
+.titulo-gradiente {
+    font-family: 'Poppins', sans-serif; /* Define a fonte Poppins */
+   background-color: #b61b6e;
+    background-size: 200% 200%; /* Amplia o gradiente */
+    background-clip: text; /* fallback, se suportado */
+    -webkit-background-clip: text; /* Aplica o gradiente no texto */
+    -webkit-text-fill-color: transparent; /* Remove a cor sólida do texto */
+    animation: gradiente 5s infinite alternate, respiracao 4s infinite ease-in-out; /* Combina as animações */
+    font-weight: bold;
+    font-size: 3rem; /* Tamanho maior da fonte */
+    text-transform: uppercase; /* Para um estilo impactante */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 100px; /* Ajuste de espaçamento */
+    text-shadow: 4px 4px 6px #5e03477e; /* Sombra para mais destaque */
+}
+
+
+/* Container de produtos */
+/* Estiliza o contêiner principal onde os produtos estão dispostos */
+
+
+.produtos-box{
+    background: url('../imagens/fundomain4.jpg') center/cover no-repeat;
+    display: flex; /* Define o layout flexbox */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    flex-wrap: wrap; /* Permite que os itens se ajustem e quebrem linha, se necessário */
+   
+    
+}
+
+
+.produtos-container {
+    display: grid; /* Configura um layout de grade */
+    grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas com largura uniforme */
+    grid-gap: 40px; /* Define o espaçamento entre os itens (produtos) */
+    padding: 50px; /* Adiciona um espaçamento interno ao redor do contêiner */
+    
+    
+}
+
+/* Estilo geral das caixas de produtos individuais */
+.produto {
+    width: 100%; /* Faz com que as caixas ocupem toda a largura disponível da coluna */
+    max-width: 300px; /* Limita a largura máxima das caixas para evitar tamanhos excessivos */
+    border: 4px solid #831ba3; /* Adiciona uma borda fina e discreta */
+    padding: 8px; /* Adiciona espaçamento interno dentro da caixa */
+    text-align: center; /* Centraliza o texto dentro da caixa */
+    border-radius: 10px; /* Arredonda os cantos da caixa */
+    background: linear-gradient(135deg, #4304f1b2, #008cffaf, #8024a5a8, #00a5feb0); /* Degradê diagonal */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Cria uma sombra leve para dar profundidade */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave ao aplicar transformações e sombras */
+    border-image-source: linear-gradient(45deg, #4304f1, #008cff, #8024a5, #00a6fe);
+    border-image-slice: 1;
+}
+
+/* Estilo ao passar o mouse sobre as caixas de produtos */
+.produto:hover {
+    transform: translateY(-15px); /* Move a caixa levemente para cima */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Intensifica a sombra para destacar o produto */
+}
+
+/* Estilo das imagens dos produtos */
+.produto img {
+    width: 90%; /* Garante que a imagem ocupe toda a largura da caixa */
+    border-radius: 1px; /* Arredonda levemente os cantos da imagem */
+    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* Estilo dos títulos dos produtos */
+.produto h3 {
+    margin: 10px 0; /* Define margens superiores e inferiores */
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte para o título */
+    color: #f8f1f1; /* Define a cor do texto em um tom escuro */
+}
+
+/* Estilo dos parágrafos informativos dentro das caixas */
+.produto p {
+    padding: -9px;
+    margin: 10x 0; /* Define margens para espaçamento */
+    color: #555; /* Adiciona uma cor discreta ao texto */
+    font-size: 0.8rem; /* Tamanho das estrelas */
+    color: #FFD700; /* Cor dourada para simular estrelas */
+}
+
+
+/* Estilo para o preço exibido nos produtos */
+.produto .preco {
+    padding: -9px;
+    font-weight: bold; /* Torna o texto do preço mais destacado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra com leve transparência */
+
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    color: #099e2b; /* Aplica um tom verde para destacar o preço */
+    margin: 10px 0; /* Adiciona margens ao redor do preço */
+    
+}
+
+/* Estilo dos botões dentro das caixas de produtos */
+.produto button {
+    background-color: #28a745; /* Define a cor de fundo verde para o botão */
+    color: white; /* Define o texto do botão em branco */
+    border: none; /* Remove qualquer borda ao redor do botão */
+    padding: 10px 15px; /* Adiciona espaçamento interno no botão */
+    cursor: pointer; /* Exibe o cursor de clique quando o mouse está sobre o botão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    font-size: 1rem; /* Define o tamanho da fonte do texto do botão */
+    transition: background-color 0.3s; /* Suaviza a mudança de cor no hover */
+}
+
+/* Estilo ao passar o mouse sobre os botões */
+.produto button:hover {
+    background-color: #218838; /* Escurece a cor do botão para indicar interação */
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Para alinhar verticalmente */
+    flex-wrap: wrap; /* Permite que os itens se ajustem e quebrem linha, se necessário */
+    justify-content: space-between; /* Cria espaço entre os itens */
+
+}
+.container img {
+    margin-right: 15px; /* Espaço entre a imagem e o texto */
+    flex-wrap: wrap; /* Permite que os itens se ajustem e quebrem linha, se necessário */
+    margin-left: -90px; /* Move a imagem mais para a esquerda */
+
+    
+
+}
+
+
+.parallax{
+    background: url('../imagens/headercapa3.jpg') center/cover no-repeat;
+    display: flex; /* Define o layout flexbox */
+    justify-content: right; /* Centraliza horizontalmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    flex-wrap: wrap; /* Permite que os itens se ajustem e quebrem linha, se necessário */
+    background-color: rgb(51,51,51);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.205);
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
+
+.parallax#headercapa3{
+    display: inline-block;
+    padding: 5px;
+    background-color: rgba(26, 22, 22, 0.479);
+    text-shadow: 1px 1px 0px black;
+}
+
+
+
+
+
+
