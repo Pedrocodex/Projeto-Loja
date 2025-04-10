@@ -408,8 +408,20 @@ h2 {
     text-shadow: 1px 1px 0px black;
 }
 
+.container{
+    display: flex; /* Define o layout flexbox */
+    justify-content: right; /* Centraliza horizontalmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
 
+    background-size: cover;
+    background-attachment: fixed;
 
+}
 
-
-
+.contato-fundo {
+    background-image: url('../imagens/fundomain2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Altura da faixa que você quer */
+    width: 100%;
+  }

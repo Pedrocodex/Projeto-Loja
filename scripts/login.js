@@ -33,3 +33,9 @@ document.querySelectorAll('.form-control').forEach(input => {
   loginButton.addEventListener('click', () => {
     alert('Tentando fazer login...');
   });
+
+ // Adicionar evento de clique ao logotipo para recarregar a página
+ logo.addEventListener("click", () => {
+  location.reload(); // Recarrega a página
+});
+
